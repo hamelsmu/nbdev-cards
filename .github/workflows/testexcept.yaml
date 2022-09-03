@@ -10,7 +10,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -Uq git+https://github.com/fastai/ghapi.git
     - name: test py
-      shell: python
+      shell: python {0}
       run: |
         from ghapi.core import GhApi
         api = GhApi(owner='tensorflow', repo='tensorflow', token="${{ secrets.GITHUB_TOKEN }}")
